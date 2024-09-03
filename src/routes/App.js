@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './LogoOwlSTR.svg';
 import './App.css';
 
 function App() {
@@ -10,10 +10,9 @@ function App() {
         <p>
           Owl
         </p>
-        <a></a>
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          className="login"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
         >
