@@ -1,13 +1,14 @@
 import React from "react";
-import '../styles/login.css'
+import '../styles/Login-Register.css'
+import Logo from '../IMG/LogoOwlSTR.svg'
 
-function Registrarse(){
+function Register() {
     return(
     <div class="content">
         {/* <!-- Logo y TextLogo --> */}
 
         <div class="Flogo" id="FonlLogo-login-registro">
-            <img class="logo" src="../IMG/LogoOwlSTR.svg" alt="Logo Owl" class="logo"/>
+            <img class="logo" src={Logo} alt="Logo Owl" className="logo"/>
         </div>
         <div class="tlogo">
             <img src="../IMG/Texto Owl.png" alt="TextLogo" class="textlogo"/>
@@ -34,9 +35,10 @@ function Registrarse(){
         {/* <!-- Botones --> */}
 
         <div class="botones">
-            <a href="#"><button class="UserRegister" id="RegisterUser">Enviar</button></a>
+            <a href="Login.html"><button class="UserRegister" id="RegisterUser">Enviar</button></a>
             <a href="Login.html"><button class="UserLogin" id="LoginUser">Ya tengo una cuenta</button></a>
         </div>
     </div>
     )
 }
+            export default Register;

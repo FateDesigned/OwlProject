@@ -1,13 +1,11 @@
 import React from "react";
-import Iniciosesion from '../componentes/Registro';
+import Register from '../componentes/Registro.jsx';
 
-function Registrarse() {
+function Registro() {
     return (
         <div className="Login">
-            <Registro/>
-            <Header/>
-            
+            <Register />
         </div>
     );
 }
-export default Login;
+export default Registro;

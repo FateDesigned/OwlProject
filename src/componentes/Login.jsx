@@ -1,5 +1,6 @@
 import React from "react";
-import '../styles/login.css';
+import '../styles/Login-Register.css';
+import { Link } from "react-router-dom";
 
 function Iniciosesion() {
     return (
@@ -9,7 +10,7 @@ function Iniciosesion() {
                     alt="Logo Owl" />
                 </div>
                 <div class="tlogo">
-                    <img src="../IMG/Texto Owl.png" alt="TextLogo" class="textlogo" />
+                    <img src="./IMG/Texto_Owl.png" alt="TextLogo" class="textlogo" />
                 </div>
                 {/* <!-- Contenido --> */}
 
@@ -25,8 +26,9 @@ function Iniciosesion() {
                 <div class="botones">
                             <a href="../index.html">
                                 <button class="UserRegister" id="RegisterUser">Iniciar Sesión</button></a>
-                            <a href='Registro.js'>
-                                <button class="UserLogin" id="LoginUser">Registrarme</button></a>
+                            <Link to ="/registro">
+                                <button class="UserLogin" id="LoginUser">Registrarme</button>
+                            </Link>
                 </div>
                 </div>
             </div>
