@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+
+/* Reglas */
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido */
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 25pt;
+    font-family: 'Oswald', Bold;
+}
+
+/* Registro/login */
+.content {
+    display: grid;
+    position: relative;
+    grid-template-rows: 10vh 10vh 60vh 20vh;
+
+}
+
+/* Imagenes*/
+.Flogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    height: fit-content;
+    z-index: 1;
+    grid-row: 3;
+    opacity: 50%;
+
+}
+
+.tlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    grid-row: 1;
+
+}
+
+.textlogo {
+    margin-top: 5%;
+    height: 80px;
+    z-index: 20;
+}
+
+/* Texto/Form/botones */
+.Tittle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    z-index: 20;
+    grid-row: 2;
+    font-size: 3.6em;
+    color: #d9d9d9;
+}
+
+.formRegistro-Login {
+    grid-row: 3;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.Registro-Login {
+    z-index: 20;
+}
+
+input {
+    display: flex;
+    background-color: #d9d9d940;
+    border: 1px solid black;
+    border-style: inset;
+    border-radius: 0px;
+    margin: 5px;
+    text-align: center;
+    width: 340px;
+    height: 50px;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    grid-row: 4;
+}
+
+.UserRegister {
+    z-index: 20;
+    color: #000;
+    font-family: 'Oswald';
+    font-size: 1.8em;
+    border: 1px;
+    border-radius: 20px;
+    width: 340px;
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: #00FF00;
+}
+
+
+
+.UserLogin {
+    z-index: 20;
+    border: 1px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Oswald';
+    font-size: 1.8em;
+    width: 290px;
+    height: 50px;
+    background-color: #d9d9d9;
+}
+
+/* Inico*/
+
+.InicioHeader {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    background-color: #d9d9d9;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+}
+.verticalMenu{
+    grid-column: 1;
+    display: inline-flex;
+    width: fit-content;
+}
+.InicioLogo {
+    grid-column: 2;
+    height: 10vh;
+    display: flex;
+}
+
+/* .U:A */
+.UserRegister:hover {
+    background-color: #d9d9d9;
+    cursor: pointer;
+}
+
+.UserLogin:hover {
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #00000084;
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-size: 1.9rem;
+}
+
+input:focus-visible {
+    outline-color: #00FF00;
+}
+
+
+/* MediaQueries */
+
+@media(min-width:768px) {
+
+    .content {
+        grid-template-columns: 50vw 50vw;
+    }
+
+    .Flogo {
+        grid-column: 1;
+        background-color: #d9d9d9;
+        height: 100vh;
+        background-image: none;
+    }
+
+    .logo {
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+    }
+
+    .tlogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        height: 60px;
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .Tittle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 3.6em;
+        color: #d9d9d9;
+    }
+
+    .botones {
+        grid-column: 2;
+    }
+
+    .formRegistro-Login {
+        display: flex;
+        position: relative;
+        grid-column: 2;
+        grid-row: 3;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .Registro-Login {
+        grid-column: 2;
+        grid-row: 3;
+        position: relative;
+        flex-direction: column;
+        z-index: 20;
+    }
+}
