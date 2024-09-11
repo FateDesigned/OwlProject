@@ -6,8 +6,6 @@ function Login() {
     return (
         <div className="Login">
             <Iniciosesion />
-            
-            
         </div>
     );
 }
