@@ -203,7 +203,7 @@ input:focus-visible {
     }
 
     .logo {
-        height: fit-content;
+        height: 28vh;
         display: flex;
         justify-content: center;
         position: absolute;

@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/Login-Register.css';
 import { Link } from "react-router-dom";
 import Logo from '../IMG/LogoOwlSTR.svg';
+import TextLogo from '../IMG/Texto_Owl.png'
 
 function Iniciosesion() {
     return (
@@ -11,7 +12,7 @@ function Iniciosesion() {
                     <img class="logo" src={Logo} alt="Logo Owl" />
                 </div>
                 <div class="tlogo">
-                    <img src="./IMG/Texto_Owl.png" alt="TextLogo" class="textlogo" />
+                    <img src={TextLogo} alt="TextLogo" class="textlogo" />
                 </div>
                 {/* <!-- Contenido --> */}
 

@@ -1,7 +1,8 @@
 import React from "react";
 import '../styles/Login-Register.css';
 import Logo from '../IMG/LogoOwlSTR.svg';
-
+import TextLogo from '../IMG/Texto_Owl.png';
+import { Link } from "react-router-dom";
 function Register() {
     return (
         <div class="content">
@@ -11,7 +12,7 @@ function Register() {
                 <img class="logo" src={Logo} alt="Logo Owl" className="logo" />
             </div>
             <div class="tlogo">
-                <img src="../IMG/Texto Owl.png" alt="TextLogo" class="textlogo" />
+                <img src={TextLogo} alt="TextLogo" class="textlogo" />
             </div>
             {/* <!-- Contenido --> */}
 
@@ -35,8 +36,13 @@ function Register() {
             {/* <!-- Botones --> */}
 
             <div class="botones">
-                <a href="Login.html"><button class="UserRegister" id="RegisterUser">Enviar</button></a>
-                <a href="Login.html"><button class="UserLogin" id="LoginUser">Ya tengo una cuenta</button></a>
+                <Link to='/' href="Login.html">
+                    <button class="UserRegister" id="RegisterUser">Enviar</button>
+                </Link>
+            
+                <Link to='/login'>
+                <button class="UserLogin" id="LoginUser">Ya tengo una cuenta</button>
+                </Link>
             </div>
         </div>
     )
