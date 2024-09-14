@@ -1,5 +1,5 @@
 import React from "react";
-import Iniciosesion from '../componentes/Login';
+import Iniciosesion from '../componentes/Login.jsx';
 
 
 function Login() {

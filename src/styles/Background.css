@@ -20,21 +20,19 @@ body {
 /* Contenido */
 
 
-.content {
+.Inicio {
     display: grid;
-    position: relative;
-    grid-template-rows: 10vh 10vh 60vh 20vh;
 
 }
 
 /* Imagenes*/
-.Flogo {
+.Fondologo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo {
+.Blogo {
     display: flex;
     height: fit-content;
     z-index: 1;
@@ -44,7 +42,7 @@ body {
 }
 
 
-.tlogo {
+.Hlogo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,54 +51,31 @@ body {
 
 }
 
-.textlogo {
-    margin-top: 5%;
-    height: 80px;
-    z-index: 20;
-}
 
 /* MediaQueries */
-@media (prefers-reduced-motion: no-preference) {
-    .logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-@keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+
 @media(min-width:768px) {
-
-    .content {
-        grid-template-columns: 50vw 50vw;
-    }
-
-    .Flogo {
-        
+    .Fondologo {
         background-color: #d9d9d9;
         height: 100vh;
     }
 
-    .logo {
+    .Blogo {
         height: fit-content;
         display: flex;
         justify-content: center;
         position: absolute;
     }
 
-    .tlogo {
+    .Hlogo {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 10px;
         height: 60px;
-        grid-row: 1;
-        grid-column: 2;
     }
+.botones-login{
+    grid-column:2;
+}
 
 }

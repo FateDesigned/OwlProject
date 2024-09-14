@@ -18,6 +18,7 @@ body {
 }
 
 /* Contenido */
+
 h1 {
     font-size: 1.8em;
 }
@@ -44,10 +45,10 @@ h2 {
 
 .logo {
     display: flex;
-    height: fit-content;
     z-index: 1;
     grid-row: 3;
     opacity: 50%;
+    position: absolute;
 
 }
 
@@ -78,8 +79,9 @@ h2 {
     color: #d9d9d9;
 }
 
-.formRegistro-Login {
+.formRegistroLogin{
     grid-row: 3;
+    height: 50vh;
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -88,17 +90,14 @@ h2 {
     z-index: 20;
 }
 
-.Registro-Login {
-    z-index: 20;
-}
 
-input {
+
+.inputLogin-Registro {
     display: flex;
     background-color: #d9d9d940;
     border: 1px solid black;
     border-style: inset;
-    border-radius: 0px;
-    margin: 5px;
+    margin:5px;
     text-align: center;
     width: 340px;
     height: 50px;
@@ -116,7 +115,7 @@ input {
     grid-row: 4;
 }
 
-.UserRegister {
+#RegisterUser {
     z-index: 20;
     color: #000;
     font-family: 'Oswald';
@@ -129,48 +128,24 @@ input {
     background-color: #00FF00;
 }
 
-
-
-.UserLogin {
+#LoginUser {
     z-index: 20;
     border: 1px;
     border-radius: 20px;
     color: black;
     font-family: 'Oswald';
     font-size: 1.8em;
-    width: 290px;
+    width: 330px;
     height: 50px;
     background-color: #d9d9d9;
 }
-
-/* Inico*/
-
-.InicioHeader {
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    background-color: #d9d9d9;
-    width: 100vw;
-    height: 10vh;
-    justify-content: center;
-}
-.verticalMenu{
-    grid-column: 1;
-    display: inline-flex;
-    width: fit-content;
-}
-.InicioLogo {
-    grid-column: 2;
-    height: 10vh;
-    display: flex;
-}
-
 /* .U:A */
-.UserRegister:hover {
+.RegisterUser:hover {
     background-color: #d9d9d9;
     cursor: pointer;
 }
 
-.UserLogin:hover {
+.LoginUser:hover {
     cursor: pointer;
 }
 
@@ -179,6 +154,7 @@ input::placeholder {
     text-align: center;
     font-family: 'Oswald';
     font-weight: 700;
+    margin-top: 5px;
     font-size: 1.9rem;
 }
 
@@ -203,7 +179,7 @@ input:focus-visible {
     }
 
     .logo {
-        height: 28vh;
+        height: max-content;
         display: flex;
         justify-content: center;
         position: absolute;
@@ -232,9 +208,10 @@ input:focus-visible {
 
     .botones {
         grid-column: 2;
+        
     }
 
-    .formRegistro-Login {
+    .formRegistroLogin {
         display: flex;
         position: relative;
         grid-column: 2;

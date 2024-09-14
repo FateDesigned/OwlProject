@@ -7,32 +7,38 @@ import TextLogo from '../IMG/Texto_Owl.png'
 function Iniciosesion() {
     return (
         <div className="Iniciosesion">
-            <div class="content">
-                <div class="Flogo" id="FLogo-login-registro">
+            <div className="content">
+                {/* Logos-Img */}
+
+                <div className="Flogo" id="FLogo-login-registro">
                     <img class="logo" src={Logo} alt="Logo Owl" />
                 </div>
-                <div class="tlogo">
+                <div className="tlogo">
                     <img src={TextLogo} alt="TextLogo" class="textlogo" />
                 </div>
+
                 {/* <!-- Contenido --> */}
 
-                <h2 class="Tittle" id="LoginTittle">INICIAR SESIÓN</h2>
+                <h2 className="Tittle" id="LoginTittle">INICIAR SESIÓN</h2>
 
                 {/* <!-- Formulario --> */}
-                <div class="formRegistro-Login" id="FormLogin">
+                <div className="formRegistroLogin" id="FormLogin">
                     <form>
-                        <input id="UserEmail" type="email" placeholder="Correo o Telefono" required />
-                        <input id="UserPasword" type="password" placeholder="Contraseña" required />
+                        <input className="inputLogin-Registro" id="UserEmail" type="email" placeholder="Correo o Telefono" required />
+                        <input className="inputLogin-Registro" id="UserPasword" type="password" placeholder="Contraseña" required />
                     </form>
                 </div>
-                <div class="botones">
-                    <Link to="/">
-                        <button class="UserLogin" id="RegisterUser">Iniciar Sesión</button>
+                {/* Botones */}
+                <div className="botones">
+                    <Link to='/'>
+                        <button className="btnLoginRegistro" id="RegisterUser">Iniciar Sesión</button>
                     </Link>
-                    <Link to="/registro">
-                        <button class="UserRegister" id="LoginUser">Registrarme</button>
+
+                    <Link to='/registro'>
+                        <button className="btnLoginRegistro" id="LoginUser">Registrarme</button>
                     </Link>
                 </div>
+
             </div>
         </div>
     );
