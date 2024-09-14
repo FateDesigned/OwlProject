@@ -19,11 +19,11 @@ function Fondo() {
             </div>
 
             <div className="botones-login" id="btnRectLogin">
-                <Link To='/registro'>
+                <Link to='/registro'>
                     <button className="btnLogin" id="RegisterUser"> Registrarse </button>
                 </Link>
 
-                <Link To='/login'>
+                <Link to='/login'>
                     <button className="btnLogin"id="LoginUser"> Inicia Sesion </button>
                 </Link>
             </div>
