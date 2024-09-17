@@ -1,16 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+
+// Styles
 import '../styles/Background.css'
 import Logo from '../IMG/LogoOwlSTR.svg'
 import TextLogo from '../IMG/Texto_Owl.png'
-import { Link } from "react-router-dom";
+
 
 function Fondo() {
     return (
-        <div class="content">
-            {/* <!-- Logo y TextLogo --> */}
+        <div className="content-Background">
+            {/* <!-- Logo de logo--> */}
 
-            <div className="Fondologo" id="FontLogo-login-registro">
-                <img class="Blogo" src={Logo} alt="Logo Owl" className="logo" />
+            <div className="Fondologo" id="Background-Logo">
+                <img className="B-logo" src={Logo} alt="Logo Owl"/>
             </div>
 
             <div className="tlogo">

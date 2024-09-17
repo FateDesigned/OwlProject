@@ -20,23 +20,26 @@ body {
 /* Contenido */
 
 
-.Inicio {
+.content-Background {
     display: grid;
+    grid-template-columns: 10vh 80vh 10vh;
+    grid-template-rows: 20vh 60vh 20vh;
 
 }
 
 /* Imagenes*/
 .Fondologo {
     display: flex;
+    position: relative;
+    grid-row: 3;
+    grid-column:2;
     align-items: center;
     justify-content: center;
 }
 
-.Blogo {
+.B-logo {
     display: flex;
-    height: fit-content;
     z-index: 1;
-    grid-row: 3;
     opacity: 50%;
 
 }
@@ -50,17 +53,19 @@ body {
     grid-row: 1;
 
 }
-
-
+/* botones */
+.botones-login{
+    position: relative;
+}
 /* MediaQueries */
 
 @media(min-width:768px) {
     .Fondologo {
-        background-color: #d9d9d9;
+        position: relative;
         height: 100vh;
     }
 
-    .Blogo {
+    .logo {
         height: fit-content;
         display: flex;
         justify-content: center;

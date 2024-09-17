@@ -1,4 +1,6 @@
 import React from "react";
+
+// Componentes
 import Fondo from '../componentes/Fondo.jsx';
 import Header from '../componentes/SideBar.jsx'
 

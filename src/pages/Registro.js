@@ -1,4 +1,6 @@
 import React from "react";
+
+// Componentes
 import Register from '../componentes/Registro.jsx';
 
 function Registro() {

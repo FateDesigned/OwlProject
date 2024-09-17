@@ -1,6 +1,10 @@
 import React from "react";
-import '../styles/Login-Register.css';
 import { Link } from "react-router-dom";
+
+// Styles
+import '../styles/Login-Register.css';
+
+// IMG
 import Logo from '../IMG/LogoOwlSTR.svg';
 import TextLogo from '../IMG/Texto_Owl.png'
 
@@ -11,7 +15,7 @@ function Iniciosesion() {
                 {/* Logos-Img */}
 
                 <div className="Flogo" id="FLogo-login-registro">
-                    <img class="logo" src={Logo} alt="Logo Owl" />
+                    <img className="logo" src={Logo} alt="Logo Owl" />
                 </div>
                 <div className="tlogo">
                     <img src={TextLogo} alt="TextLogo" class="textlogo" />

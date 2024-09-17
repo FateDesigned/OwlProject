@@ -1,26 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// Styles
 import '../styles/Login-Register.css';
+
+// IMG
 import Logo from '../IMG/LogoOwlSTR.svg';
 import TextLogo from '../IMG/Texto_Owl.png';
-import { Link } from "react-router-dom";
+
 
 function Register() {
     return (
-        <div class="content">
+        <div className="content">
             {/* <!-- Logo y TextLogo --> */}
 
-            <div class="Flogo" id="FontLogo-login-registro">
+            <div className="Flogo" id="FontLogo-login-registro">
                 <img class="logo" src={Logo} alt="Logo Owl" className="logo" />
             </div>
-            <div class="tlogo">
+            <div className="tlogo">
                 <img src={TextLogo} alt="TextLogo" class="textlogo" />
             </div>
             {/* <!-- Contenido --> */}
 
-            <h2 class="Tittle" id="RegisterTitle">REGISTRO</h2>
+            <h2 className="Tittle" id="RegisterTitle">REGISTRO</h2>
             {/* <!-- Formulario --> */}
 
-            <div class="formRegistroLogin" id="FormRegistro">
+            <div className="formRegistroLogin" id="FormRegistro">
                 <form className="Registro-Login">
 
                     <input className="inputLogin-Registro" id="UserName" type="text" placeholder="Crea un nombre de usuario"
