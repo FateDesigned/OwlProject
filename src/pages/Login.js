@@ -4,7 +4,7 @@ import React from "react";
 import '../styles/Login.css'
 
 // Componentes
-import Iniciosesion from '../componentes/Login.jsx';
+import Iniciosesion from "../componentes/Login.jsx";
 
 
 function login() {
