@@ -1,5 +1,6 @@
 import React from "react";
-
+// styles
+import '../styles/Login.css'
 // Componentes
 import Register from '../componentes/Registro.jsx';
 

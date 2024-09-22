@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Styles
-import '../styles/Login-Register.css';
-
+import '../styles/Login.css'
 // IMG
 import Logo from '../IMG/LogoOwlSTR.svg';
 import TextLogo from '../IMG/Texto_Owl.png'
 
 function Iniciosesion() {
     return (
-        <div className="Iniciosesion">
+        <div className="Login-Registro">
             <div className="content">
                 {/* Logos-Img */}
 
@@ -18,7 +17,7 @@ function Iniciosesion() {
                     <img className="logo" src={Logo} alt="Logo Owl" />
                 </div>
                 <div className="tlogo">
-                    <img src={TextLogo} alt="TextLogo" class="textlogo" />
+                    <img src={TextLogo} alt="TextLogo" className="textlogo" />
                 </div>
 
                 {/* <!-- Contenido --> */}
@@ -26,12 +25,11 @@ function Iniciosesion() {
                 <h2 className="Tittle" id="LoginTittle">INICIAR SESIÓN</h2>
 
                 {/* <!-- Formulario --> */}
-                <div className="formRegistroLogin" id="FormLogin">
-                    <form>
+                
+                    <form className="formRegistroLogin" id="FormLogin">
                         <input className="inputLogin-Registro" id="UserEmail" type="email" placeholder="Correo o Telefono" required />
                         <input className="inputLogin-Registro" id="UserPasword" type="password" placeholder="Contraseña" required />
                     </form>
-                </div>
                 {/* Botones */}
                 <div className="botones">
                     <Link to='/'>

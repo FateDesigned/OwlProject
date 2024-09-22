@@ -1,14 +1,15 @@
 import React from "react";
 
+//styles
+import '../styles/inicio.css'
 // Componentes
-import Fondo from '../componentes/Fondo.jsx';
-import Header from '../componentes/SideBar.jsx'
+import InicioNoLogin from '../componentes/NavBar.jsx'
+
 
 function Inicio() {
     return (
-        <div className="Login">
-            <Fondo />
-            <Header />
+        <div className="HomeNoLogin">
+            <InicioNoLogin />
             
             
         </div>

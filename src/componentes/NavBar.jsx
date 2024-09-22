@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Styles
 
 
 // IMG
-import Logo from '../IMG/LogoOwlSTR.svg';
+import Logo from '../IMG/LogoOwlSTR .png';
 
 function Header() {
   return (
-    <main className="Registro-Login">
+    <div className="NavBar">
 
       {/*Logo*/}
 
 
-        <Link to="/" className="sideBar-to-Inicio">
-          <svg src={Logo} className="bi pe-none me-2"></svg>
-          <span className="Side Name">OwlStrategy</span>
+        <Link to="/" className="OpenSideBar">
+          <svg src={Logo} className="Open-Nav Bar"></svg>
         </Link>
         <hr />
 
@@ -58,24 +56,19 @@ function Header() {
         </ul>
 
         <hr />
+        {/* No Profile Nav */}
 
-        {/* Profile Nav */}
+        <div className="no-Profile-Nav" id="btn-login-register">
+                <Link to='/registro'>
+                    <button className="btnLogin" id="RegisterUser"> Registrarse </button>
+                </Link>
 
-        <div className="profile-dropdown-Nav">
-          <Link to='/perfil' className="Profile-boton" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-            <strong>OwlUser</strong>
-          </Link>
-          <ul className="dropdown-menu">
-            <li><Link to='/' className="dropdown-item">New project...</Link></li>
-            <li><Link to='/' className="dropdown-item">Settings</Link></li>
-            <li><Link to='/' className="dropdown-item">Profile</Link></li>
-            <li><hr className="dropdown-divider" /></li>
-            <li><Link to='/' className="dropdown-item">Sign out</Link></li>
-          </ul>
+                <Link to='/login'>
+                    <button className="btnLogin"id="LoginUser"> Inicia Sesion </button>
+                </Link>
         </div>
 
-    </main>
+    </div>
   );
 }
 export default Header;
