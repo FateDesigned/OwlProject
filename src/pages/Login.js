@@ -4,14 +4,14 @@ import React from "react";
 import '../styles/Login.css'
 
 // Componentes
-import Iniciosesion from '../componentes/login.jsx';
+import Iniciosesion from '../componentes/Login.jsx';
 
 
-function Login() {
+function login() {
     return (
         <div className="Login">
             <Iniciosesion />
         </div>
     );
 }
-export default Login;
+export default login;
