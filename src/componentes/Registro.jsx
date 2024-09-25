@@ -50,11 +50,11 @@ function Register() {
 
                 <div className="botones">
                     <Link to='/'>
-                        <button className="btnRegister" id="RegisterUser">Registrarme</button>
+                        <button className="btnRegister" id="RegisterUser-login">Registrarme</button>
                     </Link>
 
                     <Link to='/login'>
-                        <button className="btnLogin" id="LoginUser">Ya tengo una cuenta</button>
+                        <button className="btnLogin" id="LoginUser-login">Ya tengo una cuenta</button>
                     </Link>
                 </div>
             </div>

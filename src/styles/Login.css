@@ -118,7 +118,7 @@ h2 {
     grid-row: 4;
 }
 
-#RegisterUser {
+#RegisterUser-login {
     z-index: 20;
     color: #000;
     font-family: 'Oswald';
@@ -130,7 +130,7 @@ h2 {
     background-color: #00FF00;
 }
 
-#LoginUser {
+#LoginUser-login {
     z-index: 20;
     border: 1px;
     color: black;
@@ -166,7 +166,7 @@ input:focus-visible {
 
 /* MediaQueries */
 
-@media(min-width:769px) {
+@media(min-width:768px) {
 
     .content {
         grid-template-columns: 50vw 50vw;
