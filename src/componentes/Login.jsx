@@ -33,11 +33,11 @@ function Iniciosesion() {
                 {/* Botones */}
                 <div className="botones">
                     <Link to='/'>
-                        <button className="btnLoginRegistro" id="RegisterUser">Iniciar Sesión</button>
+                        <button className="btnLoginRegistro" id="RegisterUser-login">Iniciar Sesión</button>
                     </Link>
 
                     <Link to='/registro'>
-                        <button className="btnLoginRegistro" id="LoginUser">Registrarme</button>
+                        <button className="btnLoginRegistro" id="LoginUser-login">Registrarme</button>
                     </Link>
                 </div>
 

@@ -6,6 +6,7 @@
 }
 
 /* Componentes */
+
 /* Nav Bar */
 .navBar {
     display: grid;
@@ -24,28 +25,33 @@
 /* Open Nav */
 .openNavBarBox {
     display: flex;
-    width: 20vw;
-    grid-column: 1;
+    position: relative;
+    width: -webkit-fill-available;
+    max-width: 100vw;
+    cursor: pointer;
+    grid-row: 1;
+    z-index: 2;
     justify-content: center;
 }
 
 .Open-Nav-Bar {
     width: -webkit-fill-available;
+    max-width: 60px;
     height: max-content;
 }
 
 
 /* Nav Items */
-.nav {
-    display: none;
+
+.nav{
+    display: flex;
     grid-row: 2;
     flex-direction: row;
     list-style: none;
     background-color: #d9d9d9;
     justify-content: center;
-
+    transition: all 0.3s ease;
 }
-
 
 .nav-link {
     color: #0d110d;
@@ -63,17 +69,16 @@
 #LoginUser-inicio {
     width: 100px;
     height: 30px;
-    background-color: #00FF00;
-    border-bottom: 3px black;
-    border-style: outset;
+    border: 0px;
+    font-family: 'oswald';
 
 }
 
 #RegisterUser-inicio {
     width: 100px;
     height: 30px;
-    border-bottom: 3px black;
-    border-style: outset;
+    border:0px;
+    font-family: 'oswald';
 }
 svg{
     width: 16px;

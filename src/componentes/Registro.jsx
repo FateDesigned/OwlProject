@@ -26,26 +26,26 @@ function Register() {
                 <h2 className="Tittle" id="RegisterTitle">REGISTRO</h2>
                 {/* <!-- Formulario --> */}
 
-                <div className="formRegistroLogin" id="FormRegistro">
-                    <form className="Registro-Login">
+                
+                <form className="formRegistroLogin" id="FormRegistro">
 
-                        <input className="inputLogin-Registro" id="UserName" type="text" placeholder="Crea un nombre de usuario"
-                            title="Inventa un nombre de usuario" required autoComplete="name" />
+                    <input className="inputLogin-Registro" id="UserName" type="text" placeholder="Crea un nombre de usuario"
+                        title="Inventa un nombre de usuario" required autoComplete="name" />
 
-                        <input className="inputLogin-Registro" id="UserEmail" type="email" placeholder="Correo Electrónico"
-                            title="Ingresa tu correo electrónico" required />
+                    <input className="inputLogin-Registro" id="UserEmail" type="email" placeholder="Correo Electrónico"
+                        title="Ingresa tu correo electrónico" required />
 
-                        <input className="inputLogin-Registro" id="UserContact" type="number" placeholder="Escribe tu numero de celular"
-                            title="Ingresa tu número de celular" required />
-                            
-                        <input className="inputLogin-Registro" id="UserPasword" type="password" placeholder="Crea una Contraseña"
-                            title="Inventa una contraseña segura" required />
+                    <input className="inputLogin-Registro" id="UserContact" type="number" placeholder="Escribe tu numero de celular"
+                        title="Ingresa tu número de celular" required />
+                        
+                    <input className="inputLogin-Registro" id="UserPasword" type="password" placeholder="Crea una Contraseña"
+                        title="Inventa una contraseña segura" required />
 
-                        <input className="inputLogin-Registro" id="userRepeatPswrd" type="password" placeholder="Repite la Contraseña"
-                            title="reescribe la contraseña inventada" required />
-                            
-                    </form>
-                </div>
+                    <input className="inputLogin-Registro" id="userRepeatPswrd" type="password" placeholder="Repite la Contraseña"
+                        title="reescribe la contraseña inventada" required />
+                        
+                </form>
+                
                 {/* <!-- Botones --> */}
 
                 <div className="botones">
