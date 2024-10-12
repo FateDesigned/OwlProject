@@ -49,7 +49,7 @@ function Register() {
                 {/* <!-- Botones --> */}
 
                 <div className="botones">
-                    <Link to='/'>
+                    <Link to='/home'>
                         <button className="btnRegister" id="RegisterUser-login">Registrarme</button>
                     </Link>
 

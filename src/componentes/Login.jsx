@@ -32,7 +32,7 @@ function Iniciosesion() {
                     </form>
                 {/* Botones */}
                 <div className="botones">
-                    <Link to='/'>
+                    <Link to='/home'>
                         <button className="btnLoginRegistro" id="RegisterUser-login">Iniciar Sesión</button>
                     </Link>
 
