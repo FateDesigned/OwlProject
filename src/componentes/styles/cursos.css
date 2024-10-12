@@ -1,0 +1,36 @@
+.Cursos{
+
+    grid-row: 2;
+    text-align: center;
+}
+.boxCursos{
+    display: flex;  
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cursos{
+    display: flex;
+    position: static;
+    width: 90px;
+    height: 60px;
+    background-color: #d9d9d9;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.tittleCursos{
+    font-size: 1.8em;
+    position: relative;
+    justify-items: center;
+}
+.nuevoCurso{
+    display: inline-block;
+}
+@media (min-width:768px){
+    .cursos{
+        width: 180px;
+        height: 100px;
+    }
+}
