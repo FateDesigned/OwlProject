@@ -2,10 +2,21 @@
 .Home-Login{
     display: grid;
     grid-template-rows: 10vh 20vh 60vh 10vh;
+
 }
 .SideNav{
+    display: grid;
     z-index: 3;
 }
 .Cursos{
     z-index: 2;
+}
+.motivacionBox{
+    display: grid;
+    grid-row: 4;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    color: #00ff00;
+    background-color: #d9d9d9;
 }

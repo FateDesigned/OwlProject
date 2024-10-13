@@ -27,7 +27,7 @@ function Iniciosesion() {
                 {/* <!-- Formulario --> */}
                 
                     <form className="formRegistroLogin" id="FormLogin">
-                        <input className="inputLogin-Registro" id="UserEmail" type="email" placeholder="Correo o Telefono" required />
+                        <input className="inputLogin-Registro" id="UserEmail" type="email" placeholder="Ingrese nombre de Usuario" required />
                         <input className="inputLogin-Registro" id="UserPasword" type="password" placeholder="Contraseña" required />
                     </form>
                 {/* Botones */}

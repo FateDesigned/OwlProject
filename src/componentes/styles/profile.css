@@ -1,0 +1,135 @@
+
+/* Contenedor principal del perfil */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado del perfil */
+  .profile-header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  /* Foto de perfil */
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* Nombre de usuario */
+  .username {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Biografía */
+  .bio {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  
+  /* Información de contacto */
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  /* Botones de acción */
+  .action-buttons {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .edit-btn {
+    background-color: #fff;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .edit-btn:hover {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Contenido del perfil */
+  .profile-content {
+    padding: 20px;
+  }
+  
+  .profile-content h2 {
+    margin-bottom: 15px;
+    color: #4CAF50;
+  }
+  
+  .posts-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .post-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fafafa;
+    border-left: 4px solid #4CAF50;
+    transition: background-color 0.3s;
+  }
+  
+  .post-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 600px) {
+    .profile-container {
+      margin: 20px;
+    }
+  
+    .profile-picture {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .username {
+      font-size: 1.5em;
+    }
+  
+    .bio {
+      font-size: 1em;
+    }
+  
+    .btn {
+      padding: 8px 16px;
+      margin: 5px;
+      font-size: 0.9em;
+    }
+  }
