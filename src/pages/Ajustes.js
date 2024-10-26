@@ -4,14 +4,14 @@ import React from "react";
 
 // Componentes
 import SideBar from '../componentes/sideBar.jsx'
-import Finanzas from '../componentes/finanzas.jsx';
+import Ajustes from '../componentes/ajustes.jsx'
 
-function finance() {
+function settings() {
     return (
-        <div className="finanzas">
+        <div className="Home-Login">
             <SideBar />
-            <Finanzas />
+            <Ajustes />
         </div>
     );
 }
-export default finance;
+export default settings;

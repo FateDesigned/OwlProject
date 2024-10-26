@@ -4,12 +4,12 @@
     grid-template-rows: 60px 30vh 60vh;
     position: relative;
     width:45%;
-    height: 100vh;
+    height: 100%;
     background-color: #d9d9d9;
     position: fixed;
     top: 0;
     left: 0;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s;
     z-index: 2;
     border-left: 1px solid black;
 }
@@ -28,16 +28,17 @@
 .toggleButton{
     display: flex;
     grid-row: 1;
-    background-color: #d9d9d9;
+    background-color: white;
     justify-content: flex-start;
-    position: relative;
+    align-items: center;
+    position: fixed;
     width: 100%;
     height: 60px;
     z-index: 3;
     border-style: none;
+    border: 1px solid black;
     cursor: pointer;
 }
-
 .text-logo{
     position: relative;
     max-height: 60px;
@@ -79,11 +80,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #d9d9d9;
+    background-color: white;
 }
 .dropDownProfile{
     background-color: #00ff00;
-    border-bottom: solid 1px black ;
+    border-bottom: solid .5px black ;
     transition: 0.2s in-out ;
     transform: translatey(-1000%);
 }
@@ -109,10 +110,10 @@
 }
 .navItem:hover{
     background-color: #00ff00;
-    border-style:solid 5px  ;
+    border-style:solid .5px  ;
 }
 .toggleButton:hover{
-    background-color: white;
+    background-color: black;
 }
 /* MediaQueries */
 

@@ -1,0 +1,27 @@
+.finanzas{
+    display: flex;
+    height: 100vh;
+    width: 100dvw;
+}
+.contentBar{
+    display: flex;
+    position: fixed;
+    align-self: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.barDonut{
+    border: 1px solid #d9d9d9;
+    background-color: #d9d9d940;
+    width: 200px;
+    height: max-content;
+}
+
+@media (min-width:768px){
+    .barDonut{
+        width: 300px;
+    }
+
+}

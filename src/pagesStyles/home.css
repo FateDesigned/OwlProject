@@ -1,0 +1,43 @@
+/* grid config */
+.Home-Login{
+    display: grid;
+    grid-template-rows: 10vh 20vh 60vh 30vh 10vh;
+
+}
+
+.SideNav{
+    grid-row: 1;
+    display: grid;
+    z-index: 3;
+}
+.Cursos{
+    z-index: 2;
+}
+.motivation{
+    display: flex;
+}
+.motivacionBox{
+    grid-row: 5;
+    width: 100%;
+    height:-webkit-fill-available;
+    position: fixed;
+    text-align: center;
+    font-size: 16px;
+    color: #00ff00;
+    background-color: #d9d9d9;
+}
+.Motivacion{
+    color: black;
+}
+
+.summary{
+    grid-row: 4;
+}
+@media (min-width:768px){
+    .fondo{
+        background-size: 300px 300px;
+    }
+    .motivacionBox{
+        position: relative; 
+    }
+}

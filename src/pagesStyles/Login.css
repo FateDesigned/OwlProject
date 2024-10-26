@@ -33,7 +33,7 @@ h2 {
 .content {
     display: grid;
     position: relative;
-    grid-template-rows: 10vh 10vh 60vh 20vh;
+    grid-template-rows: 10vh 10vh 80vh ;
 
 }
 
@@ -77,13 +77,13 @@ h2 {
     z-index: 20;
     grid-row: 2;
     font-size: 3.6em;
-    color: #d9d9d9;
+    color: #9c9c9c;
 }
 
 .formRegistroLogin{
     position: relative;
     grid-row: 3;
-    height: 50vh;
+    height: 100%;
     width: 100%;
     display: flex;
     position: absolute;

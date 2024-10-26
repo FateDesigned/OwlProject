@@ -9,6 +9,14 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+.fondo{
+  background-image: url("../IMG/LogoOwlSTR.svg");
+  background-position:center;
+  background-attachment: fixed;
+  background-repeat:no-repeat ;
+  background-size: 200px 200px;
+
+}
 body {
   margin: 0;
   font-family: Oswald;

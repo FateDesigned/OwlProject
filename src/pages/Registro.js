@@ -1,13 +1,14 @@
 import React from "react";
 // styles
-import '../styles/Login.css'
+import '../pagesStyles/Login.css'
 // Componentes
-import Register from '../componentes/Registro.jsx';
+import Register from '../componentes/registro.jsx';
 
-function Registro() {
+function Registro(props) {
+    const { setLogueado } = props
     return (
         <div className="Login">
-            <Register />
+            <Register setLogueado={setLogueado} />
         </div>
     );
 }

@@ -20,16 +20,34 @@ const SideBar = () => {
     setIsClosed(!isClosed);
   };
   return (
-    // Main
+    // Main Div
     <aside className="SideNav">
       {/* Button OpenSideBar */}
+
       <button className="toggleButton" onClick={toggleSidebar}>
+      
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          fill="#00ff00"
+          className="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fillRule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
         <img
           src={Logo}
           alt="logoOwl"
           className={`Logo-Owl ${isOpen ? "open" : "closed"}`}
           id="btnOpen"
         />
+       
+
         <img
           className="text-logo"
           id="textLogo"
@@ -40,6 +58,7 @@ const SideBar = () => {
 
       {/* SideBar */}
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
+        {/* Sidebar Options */}
         <ul className="mainNav">
           {/* Boton Inicio */}
           <Link to="/home" className="nav-link active" aria-current="page">
@@ -59,9 +78,26 @@ const SideBar = () => {
             </li>
           </Link>
 
-          <Link to="/" className="nav-link">
+          <Link to="/finanzas" className="nav-link">
             <li className="navItem" id="Finanzas">
               {/* Logo Finanzas */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-bar-chart-line-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1z" />
+              </svg>
+              Finanzas
+            </li>
+          </Link>
+
+          <Link to="/balances" className="nav-link">
+            <li className="navItem" id="Balances">
+              {/* Logo Inversiones */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -72,32 +108,13 @@ const SideBar = () => {
               >
                 <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
               </svg>
-              Finanzas
+              inversiones
             </li>
           </Link>
 
-          <Link to="/" className="nav-link">
-            <li className="navItem" id="Balances">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-activity"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"
-                />
-              </svg>
-              Balances
-            </li>
-          </Link>
-
-          {/* profile Nav */}
           <Link to="/perfil" className="nav-link">
             <li className="navItem" id="Perfil">
+              {/* Logo Perfil */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -112,8 +129,9 @@ const SideBar = () => {
             </li>
           </Link>
 
-          <Link to="/" className="nav-link">
+          <Link to="/ajustes" className="nav-link">
             <li className="navItem" id="Ajustes">
+              {/* Logo Ajustes */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -133,6 +151,7 @@ const SideBar = () => {
         {/* Profile Nav */}
 
         <div className="profileBar">
+          {/* Profile nav button */}
           <button className="toggleProfileNav" onClick={toggleProfilebar}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -156,22 +175,24 @@ const SideBar = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-caret-down-fill"
                 viewBox="0 0 16 16"
               >
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
               </svg>
             </strong>
           </button>
+
+          {/* Lista Profile Nav */}
           <ul className={`dropDownProfile ${isClosed ? "open" : "closed"}`}>
             <li className="profileNavItem">
               <Link to="/" className="dropdown-item">
+                {/* Profile Settings Logo */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-person-fill-gear"
+                  className="bi bi-person-fill-gear"
                   viewBox="0 0 16 16"
                 >
                   <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
@@ -182,16 +203,17 @@ const SideBar = () => {
 
             <li className="profileNavItem">
               <Link to="/" className="dropdown-item">
+                {/* Cambiar Empresa Logo */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-shuffle"
+                  className="bi bi-shuffle"
                   viewBox="0 0 16 16"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
                   />
                   <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192" />
@@ -202,6 +224,7 @@ const SideBar = () => {
 
             <li className="profileNavItem">
               <Link to="/" className="dropdown-item">
+                {/* Sign Out Logo */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
