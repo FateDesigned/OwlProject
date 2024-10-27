@@ -10,7 +10,8 @@ import Logo from "../IMG/LogoOwlSTR.svg";
 import TextLogo from "../IMG/Texto_Owl.png";
 
 
-const Iniciosesion = () => {
+const Iniciosesion = (props) => {
+  const { setLogueado } = props;
   
   const navigate = useNavigate();
   const [Nombre_usuario, setNombre_usuario] = useState("");
@@ -21,21 +22,19 @@ const Iniciosesion = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/login",
-        {
-          Nombre_usuario,
-          Contraseña,
-        },
-        {
-
-        }
-      );
+      const response = await axios.post('http://localhost:3001/login', {
+        Nombre_usuario,
+        Contraseña
+      }, {
+        
+      });
 
       setMensaje(response.data.message);
       // Redirigir al usuario o realizar otras acciones
-      navigate('/home');
-
+      if (Nombre_usuario && Contraseña) {
+        setLogueado(true);
+        navigate("/home");
+      }
 
     }
     catch (error) {

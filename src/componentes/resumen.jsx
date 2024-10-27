@@ -1,13 +1,14 @@
 import React from "react";
 
+// styles
+import './styles/resumen.css'
+
 const resumen = () => {
   return (
-    <div>
-      resumen
+    <div className="resumenFlex">
       <div className="summary">
         <h3 className="summaryText" id="resumenTittle">
-          {" "}
-          Resumen Diario
+          Resumen
         </h3>
         <h3 className="summaryText" id="resumenText">
           Tus gastos van en aumento

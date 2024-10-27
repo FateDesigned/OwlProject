@@ -16,11 +16,21 @@ function Register(props) {
     e.preventDefault();
 
     try {
+      if (password === passwordRepeat) {
+        Contraseña = passwordRepeat
+        
+    
+      }
+      else{
+        alert("las contraseñas no coinciden")
+      };
       const response = await axios.post(
         "http://localhost:3001/registro",
         {
           Nombre_usuario,
           Contraseña,
+          Email,
+          Telefono
         },
         {}
       );
@@ -31,6 +41,7 @@ function Register(props) {
         setLogueado(true);
         navigate("/home");
       }
+
     } catch (error) {
       if (error.response) {
         setMensaje(error.response.data.message);
@@ -40,11 +51,16 @@ function Register(props) {
       }
     }
   };
+  // Declaracion de variables
   const navigate = useNavigate();
   const [Email, setEmail] = useState("");
+  const [Telefono, setTelefono] = useState("");
   const [Nombre_usuario, setNombre_usuario] = useState("");
-  const [Contraseña, setContraseña] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordRepeat, setPasswordRepeat] = useState("");
+  const [Pais, setPais] = useState("");
   const [mensaje, setMensaje] = useState("");
+  let Contraseña;
 
   return (
     <div className="Login-Registro">
@@ -91,20 +107,29 @@ function Register(props) {
             title="Ingresa tu correo electrónico"
             required
           />
+          <select value={Pais} onChange={(e) => setPais(e.target.value)}>
+            <option selected>Selecciona</option>
+            <option >+57 Colombia</option>
+          </select>
           <input
             className="inputLogin-Registro"
             id="UserContact"
-            type="number"
+            type="tel"
+            value={Telefono}            
+            onChange={(e) => setTelefono(e.target.value)}
             placeholder="Escribe tu numero de celular"
             title="Ingresa tu número de celular"
             required
           />
+
 
           <input
             className="inputLogin-Registro"
             id="UserPasword"
             type="password"
             placeholder="Crea una Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             title="Inventa una contraseña segura"
             required
           />
@@ -113,12 +138,13 @@ function Register(props) {
             className="inputLogin-Registro"
             id="userRepeatPswrd"
             type="password"
-            value={Contraseña}
-            onChange={(e) => setContraseña(e.target.value)}
+            value={passwordRepeat}
+            onChange={(e) => setPasswordRepeat(e.target.value)}
             placeholder="Repite la Contraseña"
             title="reescribe la contraseña inventada"
             required
           />
+          {/* <!-- Botones --> */}
           <div className="botones">
             <button
               type="submit"
@@ -134,9 +160,9 @@ function Register(props) {
               </button>
             </Link>
           </div>
+
         </form>
 
-        {/* <!-- Botones --> */}
       </div>
     </div>
   );

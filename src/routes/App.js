@@ -7,12 +7,13 @@ import Cookies from "js-cookie";
 import Login from '../pages/Login';
 import Registro from '../pages/Registro';
 import Home from '../pages/Home';
-import Perfil from '../pages/perfil';
+import Perfil from '../pages/Perfil';
 import Finanzas from '../pages/Finanzas';
 import Ajustes from '../pages/Ajustes'
+import HomeN from '../pages/HomeNegocio'
 
 function App() {
-  const [logueado, setLogueado] = useState(false)
+  const [logueado, setLogueado] = useState(true)
 
   useEffect(() => {
     Cookies.set("logueado", logueado);
@@ -29,10 +30,11 @@ function App() {
               <Route exact path='/perfil' element={<Perfil />} />
               <Route exact path='/ajustes' element={<Ajustes />} />
               <Route exact path='/' element={<Registro />} />
-              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/Login' element={<Login />} />
+              <Route exact path='/HomeN' element={<HomeN />} />
             </>) : (<>
               <Route exact path='/' element={<Registro setLogueado={setLogueado} />} />
-              <Route exact path='/login' element={<Login setLogueado={setLogueado} />} />
+              <Route exact path='/Login' element={<Login setLogueado={setLogueado} />} />
             </>
           )}
 

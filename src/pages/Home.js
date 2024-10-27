@@ -4,21 +4,21 @@ import React from "react";
 import "../pagesStyles/home.css"
 
 // Componentes
-import SideBar from '../componentes/sideBar.jsx';
-import Cursos from '../componentes/cursos.jsx';
-import Metas from '../componentes/metas.jsx'
-import Motivacion  from "../componentes/motivacion.jsx";
-import Resumen from "../componentes/resumen.jsx"
+import SideBar from '../componentes/SideBar.jsx';
+import Cursos from '../componentes/Cursos.jsx';
+import Metas from '../componentes/Metas.jsx'
+import Motivacion from "../componentes/Motivacion.jsx";
+import Resumen from "../componentes/Resumen.jsx"
 
 function Home() {
     return (
         <div className="Home-Login fondo">
             <SideBar />
-            <Resumen />
             <Cursos />
             <Metas />
+            <Resumen />
             <Motivacion />
-            
+
         </div>
     );
 }

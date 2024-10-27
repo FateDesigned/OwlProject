@@ -3,8 +3,8 @@ import React from "react";
 // styles
 
 // Componentes
-import SideBar from '../componentes/sideBar.jsx'
-import Ajustes from '../componentes/ajustes.jsx'
+import SideBar from '../componentes/SideBar.jsx'
+import Ajustes from '../componentes/Ajustes.jsx'
 
 function settings() {
     return (

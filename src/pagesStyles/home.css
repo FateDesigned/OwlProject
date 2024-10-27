@@ -1,7 +1,7 @@
 /* grid config */
 .Home-Login{
     display: grid;
-    grid-template-rows: 10vh 20vh 60vh 30vh 10vh;
+    grid-template-rows: 10vh 20vh 60vh 40vh 10vh;
 
 }
 
@@ -15,12 +15,12 @@
 }
 .motivation{
     display: flex;
+    grid-row: 5;
 }
 .motivacionBox{
-    grid-row: 5;
     width: 100%;
-    height:-webkit-fill-available;
-    position: fixed;
+    height:max-content;
+    min-height: 80px;
     text-align: center;
     font-size: 16px;
     color: #00ff00;
@@ -38,6 +38,7 @@
         background-size: 300px 300px;
     }
     .motivacionBox{
+        height: 100%;
         position: relative; 
     }
 }
