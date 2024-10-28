@@ -9,30 +9,22 @@ import "./styles/finanzas.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Finanzas = () => {
-  let [Gasto, setGasto] = useState();
-  let [totalIngreso, settotalIngreso] = useState();
-  let restante = (0,1);
+  let [Gasto, setGasto] = useState(0);
+  let [IngresosT, setIngresosT] = useState(0);
 
-  const ChartGasto = async ()=> {
-    const response = await axios.post(
-      "http://localhost:3001/dinero",
-      
-    )
-
-  }
-  const alerta = async (e) => {
-    alert(restante)
+  const ChartGasto = async () => {
+    const response = await axios.post("http://localhost:3001/dinero");
   };
+
   const gastosData = {
-    labels: [ "gastos", "Restante"],
+    labels: ["gastos"],
     datasets: [
       {
         label: "dinero",
-        data: [Gasto, restante],
+        data: [Gasto],
         backgroundColor: ["#ff0000", "#00ff00"],
       },
     ],
-
   };
   const options = {
     responsive: true,
@@ -46,20 +38,15 @@ const Finanzas = () => {
     <div className="finanzas">
       <main className="contentBar">
         <div className="barDonut">
-        <button popovertarget="mypopover">Toggle the popover</button>
-          <dialog popover> holaa</dialog>
-          <br />
-          <hr />
           <label htmlFor="gasto1">
             Ingresa un gasto
-            <input type="number"  id="gasto1" placeholder="Ingresa Un Gasto" value={Gasto} onChange={(e) => setGasto(e.target.value)} />
-          </label>
-          <label htmlFor="gasto1">
-            Ingresa el total de tus ingresos
-            <input type="number" placeholder="Ingresa tu salario" id="ingresosTotales" value={totalIngreso} onChange={(e) => settotalIngreso(e.target.value)} />
-            <button onClick={alerta}>
-              Siuuu
-            </button>
+            <input
+              type="number"
+              id="gasto1"
+              placeholder="Ingresa Un Gasto"
+              value={Gasto}
+              onChange={(e) => setGasto(e.target.value)}
+            />
           </label>
           <Doughnut data={gastosData} options={options} />
         </div>
