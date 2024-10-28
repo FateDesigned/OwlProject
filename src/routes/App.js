@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import Login from '../pages/Login';
 import Registro from '../pages/Registro';
 import Home from '../pages/Home';
-import Perfil from '../pages/Perfil';
+import Perfil from '../pages/perfil';
 import Finanzas from '../pages/Finanzas';
 import Ajustes from '../pages/Ajustes'
 import HomeN from '../pages/HomeNegocio'
