@@ -38,16 +38,6 @@ const Finanzas = () => {
     <div className="finanzas">
       <main className="contentBar">
         <div className="barDonut">
-          <label htmlFor="gasto1">
-            Ingresa un gasto
-            <input
-              type="number"
-              id="gasto1"
-              placeholder="Ingresa Un Gasto"
-              value={Gasto}
-              onChange={(e) => setGasto(e.target.value)}
-            />
-          </label>
           <Doughnut data={gastosData} options={options} />
         </div>
       </main>
