@@ -4,13 +4,13 @@ import Cookies from "js-cookie";
 
 
 // Componentes
-import Login from '../pages/Login';
-import Registro from '../pages/Registro';
-import Home from '../pages/Home';
-import Perfil from '../pages/Perfil';
-import Finanzas from '../pages/Finanzas';
-import Ajustes from '../pages/Ajustes'
-import HomeN from '../pages/HomeNegocio'
+import Login from '../pages/Login.js';
+import Registro from '../pages/Registro.js';
+import Home from '../pages/Home.js';
+import Perfil from '../pages/Perfil.js';
+import Finanzas from '../pages/Finanzas.js';
+import Ajustes from '../pages/Ajustes.js'
+import HomeN from '../pages/HomeNegocio.js'
 
 function App() {
   const [logueado, setLogueado] = useState(true)

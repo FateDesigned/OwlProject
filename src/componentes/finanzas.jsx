@@ -13,7 +13,7 @@ const Finanzas = () => {
   let [IngresosT, setIngresosT] = useState(0);
 
   const ChartGasto = async () => {
-    const response = await axios.post("http://localhost:3001/dinero");
+    const response = await axios.get("http://localhost:3001/dinero");
   };
 
   const gastosData = {
@@ -37,7 +37,12 @@ const Finanzas = () => {
   return (
     <div className="finanzas">
       <main className="contentBar">
-        <div className="barDonut">
+        <div className="barDonut" id="gastosChart">
+          Gastos Categorizados
+          <Doughnut data={gastosData} options={options} />
+        </div>
+        <div className="barDonut" id="gastosChart">
+          ingresos Categorizados
           <Doughnut data={gastosData} options={options} />
         </div>
       </main>

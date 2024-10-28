@@ -8,7 +8,6 @@
     position: fixed;
     align-self: center;
     text-align: center;
-    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
 }
