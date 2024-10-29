@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from '../pages/Login.js';
 import Registro from '../pages/Registro.js';
 import Home from '../pages/Home.js';
-import Perfil from '../pages/Perfil.js';
+import Perfil from '../pages/perfil.js';
 import Finanzas from '../pages/Finanzas.js';
 import Ajustes from '../pages/Ajustes.js'
 import HomeN from '../pages/HomeNegocio.js'
