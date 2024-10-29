@@ -10,9 +10,9 @@ import Perfil from '../pages/perfil.js';
 import Finanzas from '../pages/Finanzas.js';
 import Ajustes from '../pages/Ajustes.js'
 import HomeN from '../pages/HomeNegocio.js'
-
+import Inventario from "../pages/Contabilidad.js";
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(true)
 
   useEffect(() => {
     sessionStorage.setItem("loggedIn", loggedIn);
@@ -29,11 +29,12 @@ function App() {
               <Route exact path='/Perfil' element={<Perfil />} />
               <Route exact path='/ajustes' element={<Ajustes />} />
               <Route exact path='/' element={<Registro />} />
-              <Route exact path='/Login' element={<Login />} />
-              <Route exact path='/HomeN' element={<HomeN />} />
+              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/homeN' element={<HomeN />} />
+              <Route exact path='/inventario' element={<Inventario />} />
             </>) : (<>
               <Route exact path='/' element={<Registro setLogueado={setLoggedIn} />} />
-              <Route exact path='/Login' element={<Login setLogueado={setLoggedIn} />} />
+              <Route exact path='/login' element={<Login setLogueado={setLoggedIn} />} />
             </>
           )}
 

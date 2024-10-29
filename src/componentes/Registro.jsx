@@ -107,7 +107,7 @@ function Register(props) {
             title="Ingresa tu correo electrónico"
             required
           />
-          <select onChange={(e) => setPais(e.target.value)}>
+          <select value={Pais} onChange={(e) => setPais(e.target.value)}>
             <option selected>Selecciona</option>
             <option >+57 Colombia</option>
           </select>

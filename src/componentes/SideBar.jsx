@@ -202,7 +202,7 @@ const SideBar = () => {
             </li>
 
             <li className="profileNavItem">
-              <Link to="/" className="dropdown-item">
+              <Link to="/homeN" className="dropdown-item">
                 {/* Cambiar Empresa Logo */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
