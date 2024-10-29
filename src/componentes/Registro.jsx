@@ -10,7 +10,7 @@ import Logo from "../IMG/LogoOwlSTR.svg";
 import TextLogo from "../IMG/Texto_Owl.png";
 
 function Register(props) {
-  const { setLogueado } = props;
+  const { setLoggedIn } = props;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ function Register(props) {
         alert("las contraseñas no coinciden")
       };
       const response = await axios.post(
-        "http://localhost:3001/registro",
+        'http://localhost:3001/usuario/registro',
         {
           Nombre_usuario,
           Contraseña,
@@ -38,7 +38,7 @@ function Register(props) {
       setMensaje(response.data.message);
       // Redirigir al usuario o realizar otras acciones
       if (Nombre_usuario && Contraseña) {
-        setLogueado(true);
+        setLoggedIn(true);
         navigate("/home");
       }
 
@@ -107,7 +107,7 @@ function Register(props) {
             title="Ingresa tu correo electrónico"
             required
           />
-          <select value={Pais} onChange={(e) => setPais(e.target.value)}>
+          <select onChange={(e) => setPais(e.target.value)}>
             <option selected>Selecciona</option>
             <option >+57 Colombia</option>
           </select>

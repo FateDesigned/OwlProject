@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
+
 // Styles
 import "../pagesStyles/Login.css";
 // IMG
@@ -11,40 +12,43 @@ import TextLogo from "../IMG/Texto_Owl.png";
 
 
 const Iniciosesion = (props) => {
-  const { setLogueado } = props;
   
   const navigate = useNavigate();
+  const { setLoggedIn } = props;
   const [Nombre_usuario, setNombre_usuario] = useState("");
   const [Contraseña, setContraseña] = useState("");
   const [mensaje, setMensaje] = useState("");
 
-  const handleSubmit = async (e) => {
+  let handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await axios.post('http://localhost:3001/login', {
-        Nombre_usuario,
-        Contraseña
-      }, {
+    try{
+      await axios.get('http://localhost:3001/usuario/login').then((response) => {
+        console.log(response.target)
         
-      });
+      })
+      .then(response => {
+        if (response.Contraseña === Contraseña ) {
+          let respuesta = response[0];
+          sessionStorage.setItem('IDusuario', respuesta.IDusuario, {path: "/"});
+          sessionStorage.setItem('Nombre_U', respuesta.Nombre_Usuario, {path: "/"});
+          sessionStorage.setItem('Correo', respuesta.Contraseña, {path: "/"});
+          setLoggedIn(true);
+          navigate("/homeL");
 
-      setMensaje(response.data.message);
-      // Redirigir al usuario o realizar otras acciones
-      if (Nombre_usuario && Contraseña) {
-        setLogueado(true);
-        navigate("/home");
-      }
+        } else {
+          alert("El usuario o la contraseña no son correctos");
+        }
+      })
 
-    }
-    catch (error) {
+    }catch(error) {
       if (error.response) {
         setMensaje(error.response.data.message);
+        alert(mensaje);
       } else {
         setMensaje("Error al conectar con el servidor.");
-      }
-    }
+      };
   };
+}
 
   return (
     <div className="Login-Registro">

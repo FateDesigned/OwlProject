@@ -4,7 +4,7 @@ import React from "react";
 import "../pagesStyles/home.css"
 
 // Componentes
-import SideBar from '../componentes/SideBar.jsx';
+import SideBar from '../componentes/Sidebar.jsx';
 import Cursos from '../componentes/Cursos.jsx';
 import Metas from '../componentes/Metas.jsx'
 import Motivacion from "../componentes/Motivacion.jsx";

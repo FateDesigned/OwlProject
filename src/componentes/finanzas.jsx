@@ -10,10 +10,22 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Finanzas = () => {
   let [Gasto, setGasto] = useState(0);
-  let [IngresosT, setIngresosT] = useState(0);
+  let [Ingreso, setIngreso] = useState(0);
 
-  const ChartGasto = async () => {
-    const response = await axios.get("http://localhost:3001/dinero");
+  const addDinero = async () => {
+    const response = await axios.post("http://localhost:3001/cliente/ingresos",
+      {
+        Ingreso
+      }
+
+
+
+    );
+  };
+  const deleteDinero = async () => {
+    const response = await axios.delete(
+      "http://localhost:3001/cliente/ingresos"
+    );
   };
 
   const gastosData = {
@@ -44,6 +56,10 @@ const Finanzas = () => {
         <div className="barDonut" id="gastosChart">
           ingresos Categorizados
           <Doughnut data={gastosData} options={options} />
+        </div>
+        <div className="addDinero">
+          <input type="number" value={Ingreso} onChange={(e) => setIngreso(e.target.value)} />
+          <button onClick={addDinero}>Añadir</button>
         </div>
       </main>
     </div>
