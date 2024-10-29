@@ -33,7 +33,7 @@ const Iniciosesion = (props) => {
           sessionStorage.setItem('Nombre_U', respuesta.Nombre_Usuario, {path: "/"});
           sessionStorage.setItem('Correo', respuesta.Contraseña, {path: "/"});
           setLoggedIn(true);
-          navigate("/homeL");
+          navigate("/home");
 
         } else {
           alert("El usuario o la contraseña no son correctos");
