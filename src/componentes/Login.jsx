@@ -1,62 +1,61 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 // Styles
-import "../pagesStyles/Login.css";
+import "../pagesStyles/login.css";
 // IMG
-import Logo from "../IMG/LogoOwlSTR.svg";
 import TextLogo from "../IMG/Texto_Owl.png";
 
-
 const Iniciosesion = (props) => {
-  
   const navigate = useNavigate();
-  const { setLoggedIn } = props;
-  const [Nombre_usuario, setNombre_usuario] = useState("");
+  let { setLoggedIn } = props;
+
   const [Contraseña, setContraseña] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const [Email, setEmail] = useState("");
+  const [showPswrd, setShowPswrd] = useState(false);
+  
+
+  let ShowFunction = () => {
+    setShowPswrd(!showPswrd);
+  };
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      await axios.get('http://localhost:3001/usuario/login').then((response) => {
-        console.log(response.target)
-        
-      })
-      .then(response => {
-        if (response.Contraseña === Contraseña ) {
-          let respuesta = response[0];
-          sessionStorage.setItem('IDusuario', respuesta.IDusuario, {path: "/"});
-          sessionStorage.setItem('Nombre_U', respuesta.Nombre_Usuario, {path: "/"});
-          sessionStorage.setItem('Correo', respuesta.Contraseña, {path: "/"});
-          setLoggedIn(true);
+
+    try {
+      await axios
+        .post(
+          "http://localhost:3001/usuario/login",
+          {
+            Email,
+            Contraseña,
+          },
+          {}
+        )
+        .then((response) => {
           navigate("/home");
-
-        } else {
-          alert("El usuario o la contraseña no son correctos");
-        }
-      })
-
-    }catch(error) {
+          sessionStorage.setItem("token", response.data.token, { path: "/" });
+          setLoggedIn(true);
+          alert(response.data.message, "response");
+        });
+    } catch (error) {
       if (error.response) {
         setMensaje(error.response.data.message);
         alert(mensaje);
       } else {
         setMensaje("Error al conectar con el servidor.");
-      };
+      }
+    }
   };
-}
-
   return (
     <div className="Login-Registro">
       <div className="content">
         {/* Logos-Img */}
 
         <div className="Flogo" id="FLogo-login-registro">
-          <img className="logo" src={Logo} alt="Logo Owl" />
         </div>
         <div className="tlogo">
           <img src={TextLogo} alt="TextLogo" className="textlogo" />
@@ -75,45 +74,69 @@ const Iniciosesion = (props) => {
           id="FormLogin"
           onSubmit={handleSubmit}
         >
-          <label htmlFor="UserEmail">
-            
-          </label>
+          {/* Input Correo */}
           <input
             className="inputLogin-Registro"
             id="UserEmail"
             type="name"
-            placeholder="Ingrese nombre de Usuario"
-            value={Nombre_usuario}
-            onChange={(e) => setNombre_usuario(e.target.value)}
+            placeholder="Ingrese su correo"
+            value={Email}
+            onChange={(e) => setEmail(e.target.value)}
+            tittle="example@example.com"
             required
           />
-
-          <input
-            className="inputLogin-Registro"
-            id="UserPasword"
-            type="password"
-            value={Contraseña}
-            onChange={(e)=> setContraseña(e.target.value)}
-            placeholder="Contraseña"
-            required
-          />
-        <div className="botones">
-          
-            <button type="submit" className="btnLoginRegistro" id="RegisterUser-login">
+          {/* Input Contraseña */}
+          <div className="inputLogin-Registro">
+            <input id="ole3" className="showPswrd" type="checkbox" onChange={ShowFunction} />
+            <label className="pswrdLabel" htmlFor="ole3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill={showPswrd ? "#00ff00" : "black"}
+                className="bi bi-eye"
+                viewBox="0 0 16 16"
+              >
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+              </svg>
+            </label>
+            <input
+              className="pswrdInput"
+              id="UserPasword"
+              type={showPswrd ? "text" : "password"}
+              value={Contraseña}
+              onChange={(e) => setContraseña(e.target.value)}
+              placeholder="Contraseña"
+              tittle="No compartas tu contraseña"
+              required
+            />
+          </div>
+          {/* Botones */}
+          <div className="botonesBox">
+            <button
+              type="submit"
+              className="btnLoginRegistro"
+              id="RegisterUser-Btn"
+            >
               Iniciar Sesión
             </button>
-          
 
-          <Link to="/">
-            <button type="submit" htmlFor="FormLogin" className="btnLoginRegistro" id="LoginUser-login">
-              Registrarme
-            </button>
-          </Link>
-          <p>{mensaje}</p>
-        </div>
+            <Link to="/">
+              <button
+                type="submit"
+                htmlFor="FormLogin"
+                className="btnLoginRegistro"
+                id="LoginUser-Btn"
+              >
+                Registrarme
+              </button>
+            </Link>
+
+            <p>{mensaje}</p>
+          </div>
         </form>
-
-        {/* Botones */}
+        {/* <!-- Fin Formulario --> */}
       </div>
     </div>
   );

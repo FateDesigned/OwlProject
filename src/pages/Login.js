@@ -1,7 +1,7 @@
 import React from "react";
 
 // styles
-import '../pagesStyles/Login.css'
+import '../pagesStyles/login.css'
 
 // Componentes
 import Iniciosesion from "../componentes/Login.jsx";

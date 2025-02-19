@@ -1,6 +1,6 @@
 import React from "react";
 // styles
-import '../pagesStyles/Login.css'
+import '../pagesStyles/login.css'
 // Componentes
 import Register from '../componentes/Registro.jsx';
 

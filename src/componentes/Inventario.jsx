@@ -57,7 +57,7 @@ function Inventory() {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", position: "relative" }}>
       <h1>Inventario</h1>
       <button onClick={() => setModalOpen(true)}>
         <svg
@@ -77,7 +77,7 @@ function Inventory() {
         <div className="modal">
           <form onSubmit={handleSubmit}>
             <input
-              type="text"
+              type="File"
               name="codigoBarras"
               placeholder="Código de Barras"
               onChange={handleChange}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+      /* Reglas */
 * {
   margin: 0%;
   padding: 0%;
@@ -9,11 +10,19 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+:root:has(.switchBackground){
+  --background-page: #000000;
+  --background-article:#1f3b24;
+  --color-tittle: white;
+  --color-paraghraph: white;
+}
 .fondo{
   background-image: url("../IMG/LogoOwlSTR.svg");
   background-position:center;
   background-attachment: fixed;
   background-repeat:no-repeat ;
+  opacity: 0.5;
+  z-index: -1;
   background-size: 200px 200px;
 
 }
@@ -27,7 +36,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-a{
-  text-decoration: none;
-  color:black;
+input, button{
+  font-family: Oswald;
+}
+input::placeholder {
+  color: #00000084;
+  text-align: center;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+/* text Styles */
+h1{
+  font-size: 3.0em;
+}
+h2{
+  font-size: 2.0em;
+}
+h3{
+  font-size: 1.6em;
+}
+p,
+li{
+  font-size: 1.3em;
+  font-family: 'oswald', Regular;
+}
+@media (min-width: 768px) {
+
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  h1{
+    font-size: 3.6em;
+    font-family: 'Oswald', Bold;
+  }
+  h2{
+    font-size: 2.6em;
+    font-family: 'Oswald', Bold;
+  }
+  h3{
+    font-size: 1.6em;
+  }
+  p,
+  li{
+    font-size: 1.6em;
+    font-family: 'oswald', Regular;
+  }
+  li{
+    text-align: left;
+  }
 }
