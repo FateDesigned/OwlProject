@@ -1,0 +1,125 @@
+/* Estilos Generales */
+.mainBox{
+    display: grid;
+    grid-template-rows: 10% 40% 40% 10%;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Estilos Inventario */
+.openModal{
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    grid-row: 2;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.addButton{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+}
+.modalOverlay {
+    display: flex;
+    position: fixed;
+    z-index: 60;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    align-items: center;
+}
+
+
+.modalBox{
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    z-index: 60;
+    overflow-y: scroll;
+    align-items: center;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 310px;
+    height: 600px;
+}
+
+.formProducts{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.boxInputs{
+    display: flex;
+    width: 100%;
+    align-content: space-around;
+    justify-items: center;
+    position: relative;
+    flex-direction: column;
+}
+.inventoryDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    border: 1px solid black;
+    height: 70px;
+    justify-self: start;
+}
+.tittleInventory{
+    justify-self: start;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.inputInventory{
+    justify-self: end;
+    width: 100px;
+    height: 40px;
+}
+input::placeholder{
+    font-size: 1.0em;
+    font-weight: 400;
+
+}
+/* Estilos Payroll */
+
+
+
+/* Mediaquerys */
+@media (min-width: 768px) {
+    /* Estilos Generales */
+    .container {
+        padding: 0;
+    }
+
+    /* Estilos Inventario */
+    .modalBox{
+        width: 740px;
+    }   
+    .inputInventory{
+        justify-self: end;
+        width: 120px;
+        height: 40px;
+    }
+    .tittleInventory{
+        justify-self: start;
+        font-size: 1.4em;
+        font-weight: 600;
+    }
+
+
+    /* Estilos Payroll */
+}

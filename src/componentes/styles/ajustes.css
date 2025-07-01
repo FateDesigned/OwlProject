@@ -14,7 +14,7 @@
   .settings-container h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #4CAF50;
+    color: #2ECC72;
   }
   
   .setting-item {
@@ -23,7 +23,7 @@
   
   .setting-item h3 {
     margin-bottom: 15px;
-    color: #4CAF50;
+    color: #2ECC72;
   }
   
   .password-form {
@@ -63,7 +63,7 @@
   }
   
   .save-btn:hover {
-    background-color: #45a049;
+    background-color: #2ECC72;
   }
   
   /* Responsividad */

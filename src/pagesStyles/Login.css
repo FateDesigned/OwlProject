@@ -23,33 +23,7 @@
     grid-template-rows: 10vh 10vh 80vh;
 }
 
-#dark-Light {
-    display: none;
-}
 
-#dark-Light:checked,
-#sun {
-    display: none;
-}
-
-.light {
-    display: block;
-}
-
-.dark {
-    z-index: 210;
-}
-
-#switchTheme {
-    grid-row: 1;
-    position: absolute;
-    right: 0;
-    z-index: 20;
-}
-
-#dark-Light:checked~.moon {
-    display: none;
-}
 
 /* Imagenes*/
 .Flogo {
@@ -60,7 +34,6 @@
     background-position: center;
     background-attachment: absolute;
     background-repeat: no-repeat;
-    filter: opacity(0.5);
     background-size: 300px 300px;
 }
 
@@ -103,16 +76,16 @@
     z-index: 20;
 }
 
-.inputLogin-Registro {
+.inputLogin {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     background-color: #d9d9d940;
     border: 1px solid black;
     border-style: inset;
-    margin: 15px;
+    margin-bottom: 15px;
     text-align: center;
-    width: 340px;
+    width: 310px;
     height: 50px;
     font-family: "Oswald";
     font-weight: 700;
@@ -123,10 +96,10 @@
     display: flex;
     position: absolute;
     background-color: #d9d9d900;
-    border: 0px solid black;
+    border: 0px;
     border-style: inset;
     text-align: center;
-    width: 340px;
+    width: 310px;
     height: 50px;
     font-family: "Oswald";
     font-weight: 700;
@@ -134,10 +107,9 @@
 }
 
 /* Botones */
-.showPswrd {
+.showInput {
     display: none;
 }
-
 .pswrdLabel {
     display: flex;
     position: absolute;
@@ -155,6 +127,53 @@
     align-items: center;
     border-radius: 20px;
     grid-row: 4;
+}
+#RegisterUser-Btn {
+    z-index: 20;
+    color: #000;
+    font-family: "Oswald";
+    font-size: 1.8em;
+    border: 1px;
+    width: 310px;
+    height: 50px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #2ECC72;
+}
+
+#LoginUser-Btn {
+    z-index: 20;
+    cursor: pointer;
+    border: 1px;
+    color: black;
+    font-family: "Oswald";
+    font-size: 1.8em;
+    width: 310px;
+    height: 50px;
+    background-color: #d9d9d9;
+}
+
+/* .U:A */
+#RegisterUser-Btn:hover {
+    background-color: #d9d9d9;
+    cursor: pointer;
+}
+
+.LoginUser:hover {
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #00000084;
+    text-align: center;
+    font-family: "Oswald";
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 1.9rem;
+}
+
+input:focus-visible {
+    outline-color: #2ECC72;
 }
 
 /* MODAL */
@@ -196,7 +215,8 @@
 .infoPlan {
     border: 1px solid #000;
     border-radius: 2%;
-    display: flex;
+    align-content: center;
+    align-items: center;
     flex-direction: column;
     transition: transform 0.2s ease-in-out;
 }
@@ -210,7 +230,7 @@
     display: flex;
     list-style-position: inside;
     flex-direction: column;
-    justify-self: center;
+    align-content: start;
     position: relative;
 }
 
@@ -279,53 +299,6 @@
     height: 40px;
 }
 
-#RegisterUser-Btn {
-    z-index: 20;
-    color: #000;
-    font-family: "Oswald";
-    font-size: 1.8em;
-    border: 1px;
-    width: 340px;
-    height: 50px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    background-color: #00ff00;
-}
-
-#LoginUser-Btn {
-    z-index: 20;
-    cursor: pointer;
-    border: 1px;
-    color: black;
-    font-family: "Oswald";
-    font-size: 1.8em;
-    width: 330px;
-    height: 50px;
-    background-color: #d9d9d9;
-}
-
-/* .U:A */
-#RegisterUser-Btn:hover {
-    background-color: #d9d9d9;
-    cursor: pointer;
-}
-
-.LoginUser:hover {
-    cursor: pointer;
-}
-
-input::placeholder {
-    color: #00000084;
-    text-align: center;
-    font-family: "Oswald";
-    font-weight: 700;
-    margin-top: 5px;
-    font-size: 1.9rem;
-}
-
-input:focus-visible {
-    outline-color: #00ff00;
-}
 
 /* MediaQueries */
 

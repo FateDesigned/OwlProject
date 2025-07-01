@@ -13,7 +13,7 @@
   .profile-header {
     text-align: center;
     padding: 30px 20px;
-    background-color: #4CAF50;
+    background-color: #2ECC72;
     color: #fff;
   }
   
@@ -60,24 +60,24 @@
   
   .edit-btn {
     background-color: #fff;
-    color: #4CAF50;
-    border: 2px solid #4CAF50;
+    color: #2ECC72;
+    border: 2px solid #2ECC72;
     transition: background-color 0.3s, color 0.3s;
   }
   
   .edit-btn:hover {
-    background-color: #4CAF50;
+    background-color: #2ECC72;
     color: #fff;
   }
   
   .logout-btn {
-    background-color: #f44336;
+    background-color: #2ECC72;
     color: #fff;
     transition: background-color 0.3s;
   }
   
   .logout-btn:hover {
-    background-color: #d32f2f;
+    background-color: #2ECC72;
   }
   
   /* Contenido del perfil */
@@ -87,7 +87,7 @@
   
   .profile-content h2 {
     margin-bottom: 15px;
-    color: #4CAF50;
+    color: #2ECC72;
   }
   
   .posts-list {
@@ -100,7 +100,7 @@
     padding: 10px;
     font-size: 14px;
     background-color: #fafafa;
-    border-left: 4px solid #4CAF50;
+    border-left: 4px solid #2ECC72;
     transition: background-color 0.3s;
   }
   

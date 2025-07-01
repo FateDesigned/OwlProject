@@ -9,8 +9,8 @@ import "../pagesStyles/login.css";
 import TextLogo from "../IMG/Texto_Owl.png";
 
 const Iniciosesion = (props) => {
+
   const navigate = useNavigate();
-  let { setLoggedIn } = props;
 
   const [Contraseña, setContraseña] = useState("");
   const [mensaje, setMensaje] = useState("");
@@ -36,10 +36,12 @@ const Iniciosesion = (props) => {
           {}
         )
         .then((response) => {
-          navigate("/home");
-          sessionStorage.setItem("token", response.data.token, { path: "/" });
-          setLoggedIn(true);
-          alert(response.data.message, "response");
+          navigate("/home")
+          sessionStorage.setItem("Nombres", response.data.nombres, { path: "/" });
+          sessionStorage.setItem("apellidos", response.data.apellidos, { path: "/" });
+          sessionStorage.setItem("email", response.data.email, { path: "/" });
+          sessionStorage.setItem("telefono", response.data.telefono, { path: "/" });
+          console.log(response.data.message);
         });
     } catch (error) {
       if (error.response) {
@@ -76,19 +78,20 @@ const Iniciosesion = (props) => {
         >
           {/* Input Correo */}
           <input
-            className="inputLogin-Registro"
+            className="inputLogin"
             id="UserEmail"
             type="name"
-            placeholder="Ingrese su correo"
+            placeholder="Ingrese su email"
             value={Email}
             onChange={(e) => setEmail(e.target.value)}
             tittle="example@example.com"
+            autoComplete="off"
             required
           />
           {/* Input Contraseña */}
-          <div className="inputLogin-Registro">
-            <input id="ole3" className="showPswrd" type="checkbox" onChange={ShowFunction} />
-            <label className="pswrdLabel" htmlFor="ole3">
+          <div className="inputLogin">
+            <input id="showPswrd3" className="showInput" type="checkbox" onChange={ShowFunction} />
+            <label className="pswrdLabel" htmlFor="showPswrd3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

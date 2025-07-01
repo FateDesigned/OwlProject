@@ -13,9 +13,10 @@ function Register(props) {
 
   // Declaracion de variables
   const navigate = useNavigate();
-  const [Email, setEmail] = useState("");
-  const [Telefono, setTelefono] = useState("");
-  const [Nombre_usuario, setNombre_usuario] = useState("");
+  const [nombres, setNombres] = useState("");
+  const [apellidos, setApellidos] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
   const [mensaje, setMensaje] = useState("");
@@ -29,9 +30,19 @@ function Register(props) {
 
   // Seleccion de planes
   // Si Rol Id es 0, se muestra seleccionar plan
-  let [Rol_id, setRol_id] = useState(0);
+  let [rol_id, setRol_id] = useState(0);
 
-  let Contraseña;
+  let contraseña;
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+    if (password.length < 8){
+      setMensaje('La contraseña debe tener al menos 8 caracteres.');
+    } else{
+      setMensaje(''); // Limpiar el error al cambiar la contraseña
+    }
+    
+  };
 
   let ShowFunction = () => {
     setShowPswrd(!showPswrd);
@@ -39,31 +50,40 @@ function Register(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      if (password === passwordRepeat) {
-        Contraseña = passwordRepeat;
+
+      // validar contraseña
+      if (password.length >= 8) {
+        if (password === passwordRepeat) {
+          contraseña = passwordRepeat;
+        } else {
+          alert("las contraseñas no coinciden");
+        }
       } else {
-        alert("las contraseñas no coinciden");
-      }
+      alert('crea una contraseña segura')
+    }
+      // enviar datos al servidor backend
+
       const response = await axios.post(
         "http://localhost:3001/usuario/registro",
         {
-          Nombre_usuario,
-          Contraseña,
-          Email,
-          Telefono,
-          Rol_id,
+          nombres,
+          apellidos,
+          email,
+          contraseña,
+          telefono,
+          rol_id,
         },
         {}
       );
-      sessionStorage.setItem("token", response.data.token);
+      navigate("/home");
+      sessionStorage.setItem("token", response.data.accessToken);
       setLoggedIn(true);
       setMensaje(response.data.message);
-      navigate("/home");
     } catch (error) {
       if (error.response) {
         setMensaje(error.response.data.message);
+        alert(mensaje)
       } else {
         setMensaje("Error al conectar con el servidor.");
       }
@@ -74,14 +94,16 @@ function Register(props) {
     <div className="Login-Registro">
       <div className="content">
 
+        <div className="tlogo">
         {/* switch Theme */}
-        <input type="checkbox" name="Theme" id="dark-Light" />
-        <label id="switchTheme" htmlFor="dark-Light">
+
+        <input type="checkbox" name="Theme" id="dark-light" />
+        <label id="switchTheme" htmlFor="dark-light">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            className="light"
+            width="32"
+            height="32"
+            className="switchTheme"
             id="sun"
             viewBox="0 0 16 16"
           >
@@ -89,19 +111,17 @@ function Register(props) {
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            className="dark"
+            width="32"
+            height="32"
+            className="switchTheme"
             id="moon"
             viewBox="0 0 16 16"
           >
             <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
           </svg>
         </label>
-
         {/* <!-- TextLogo --> */}
 
-        <div className="tlogo">
           <Link to="/">
             <img src={TextLogo} alt="TextLogo" className="textlogo" />
           </Link>
@@ -126,23 +146,34 @@ function Register(props) {
 
           {/* <!-- Input Nombre de Usuario --> */}
           <input
-            className="inputLogin-Registro"
-            id="UserName"
-            value={Nombre_usuario}
-            onChange={(e) => setNombre_usuario(e.target.value)}
+            className="inputLogin"
+            id="firstName"
+            value={nombres}
+            onChange={(e) => setNombres(e.target.value)}
             type="text"
-            placeholder="Escribe tu nombre completo"
-            title="Inventa un nombre de usuario"
+            placeholder="Escribe tus Nombres"
+            title="Escribe tu nombre"
+            autoComplete="off"
             required
-            autoComplete="name"
+          />
+          <input
+            className="inputLogin"
+            id="lastName"
+            value={apellidos}
+            onChange={(e) => setApellidos(e.target.value)}
+            type="text"
+            placeholder="Escribe tus Apellidos"
+            title="Escribe tus Apellidos"
+            autoComplete="off"
+            required
           />
 
           {/* <!-- Input Correo --> */}
           <input
-            className="inputLogin-Registro"
+            className="inputLogin"
             id="UserEmail"
             type="email"
-            value={Email}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Correo Electrónico"
             title="Ingresa tu correo electrónico"
@@ -152,10 +183,10 @@ function Register(props) {
           {/* <!-- Input Telefono --> */}
 
           <input
-            className="inputLogin-Registro"
+            className="inputLogin"
             id="UserContact"
             type="tel"
-            value={Telefono}
+            value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
             placeholder="Escribe tu numero de celular"
             title="Ingresa tu número de celular"
@@ -164,25 +195,25 @@ function Register(props) {
 
           {/* <!-- Input Contraseña --> */}
 
-          <div className="inputLogin-Registro">
+          <div className="inputLogin">
             <input
               className="pswrdInput"
               id="UserPasword"
               type={showPswrd ? "text" : "password"}
               placeholder="Crea una Contraseña"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
               title="Inventa una contraseña segura"
               autoComplete="NuevaContraseña1# 9"
               required
             />
             <input
-              id="ole1"
-              className="showPswrd"
+              id="showPswrd1"
+              className="showInput"
               type="checkbox"
               onChange={ShowFunction}
             />
-            <label className="pswrdLabel" htmlFor="ole1">
+            <label className="pswrdLabel" htmlFor="showPswrd1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -198,14 +229,14 @@ function Register(props) {
           </div>
 
           {/* <!-- Input Repetir Contraseña --> */}
-          <div className="inputLogin-Registro">
+          <div className="inputLogin">
             <input
-              id="ole"
-              className="showPswrd"
+              id="showPswrd2"
+              className="showInput"
               type="checkbox"
               onChange={ShowFunction}
               />
-            <label className="pswrdLabel" htmlFor="ole">
+            <label className="pswrdLabel" htmlFor="showPswrd2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -234,12 +265,12 @@ function Register(props) {
           {/* <!-- Botones --> */}
           <div className="botonesBox">
             <button
-              type={Rol_id === 0 ? "button" : "submit"}
+              type={rol_id === 0 ? "button" : "submit"}
               className="botonesLogin"
               id="RegisterUser-Btn"
               onClick={() => setModalOpen(true)}
             >
-              {Rol_id === 0 ? "Selecciona un plan" : "Registrarme"}
+              {rol_id === 0 ? "Selecciona un plan" : "Registrarme"}
             </button>
 
             <Link to="/login">
@@ -263,8 +294,7 @@ function Register(props) {
             {/* Info Planes */}
             <div id="tittlePlanes">
 
-              <h2>Planes de Owl App</h2>
-              <h2>selecciona un plan para continuar</h2>
+              <h2>Selecciona un plan para continuar</h2>
               <p>
                 en Owl App tenemos 2 distintas formas de acceder a nuestras
                 principales funciones:
@@ -277,29 +307,32 @@ function Register(props) {
               <button id="btn-prev" className="btnCarrusel" onClick={() => {setNext(false); setPrev(true);}}> ❮ </button>
 
               <div id={prev?"activePrev":"plan1"} className="infoPlan">
-                <h3>Plan Personal</h3>
+                <h2>Plan Personal</h2>
                 <p>
                   este es el plan perfecto para quien le encanta
-                  mantener un control preciso de sus finanzas <br /> puede acceder a las siguientes funciones:
+                  mantener un control preciso de sus finanzas <br /> personales. puede acceder a las siguientes funciones:
                 </p>
-                <div>
 
                   <ol className="liFunctions">
-                    <li>Gestion de Ingresos y Gastos</li>
-                    <li>Cursos sobre finanzas Personales</li>
-                    <li>Control de facturas electronicas</li>
-                    <li>Notas de credito</li>
-                    <li>digitalización de facturas</li>
+                    <li>Gestion de ingresos y gastos</li>
+                    <li>Cursos sobre finanzas personales</li>
+                    <li>Alcancía digital</li>
+                    <li>Gestion de metas de ahorro e inversión</li>
                     
                   </ol>
-                </div>
+
               </div>
 
               <div id={next?"activeNext":"plan2"} className="infoPlan">
-                <h3>Plan Empresarial</h3>
-                <p>
-                  Accede a todas las funciones de Owl App de forma gratuita
-                </p>
+                <h2>Plan Empresarial</h2>
+
+                <ol className="liFunctions">
+                    <li>Gestión de nomina</li>
+                    <li>Facturación electronica</li>
+                    <li>Digitalización de facturas</li>
+                </ol>
+
+
               </div>
 
               <button id="btn-next" className="btnCarrusel" onClick={() => {setNext(true); setPrev(false);}}> ❯ </button>
@@ -308,7 +341,7 @@ function Register(props) {
                 <select
                   id="SelectPlan"
                   className="planesSelect"
-                  defaultValue={Rol_id}
+                  defaultValue={rol_id}
                   onChange={(e) => setRol_id(e.target.value)}
                 >
                   Selecciona un plan:
